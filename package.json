@@ -3,7 +3,6 @@
   "description": "商城商品图片鼠标移动查看放大效果",
   "files": [
     "dist",
-    "components",
     "README.md"
   ],
   "main": "dist/yooImageZoom.umd.min.js",
@@ -12,7 +11,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lib": "vue-cli-service build --target lib  --name yooImageZoom component/index.js",
+    "lib": "vue-cli-service build --target lib  --name yooImageZoom src/components/index.js",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
