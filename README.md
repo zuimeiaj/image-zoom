@@ -18,3 +18,5 @@ npm install yoo-image-zoom --save
 ## Tips
 
 放大比例=容器宽度/移动框宽度
+
+## [Demo](https://zuimeiaj.github.io/image-zoom/)
