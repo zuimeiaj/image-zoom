@@ -1,24 +1,20 @@
 # yoo-image-zoom
 
-## Project setup
+## Installation setup
+
 ```
-npm install
+npm install yoo-image-zoom --save
+
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Props
 
-### Compiles and minifies for production
-```
-npm run build
-```
+| Name | Type   | Desc                          |
+| ---- | ------ | ----------------------------- |
+| src  | string | 图片路径                      |
+| alt  | string | 图片 alt 属性                 |
+| size | object | 移动框大小，默认为 150 \* 150 |
 
-### Lints and fixes files
-```
-npm run lint
-```
+## Tips
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+放大比例=容器宽度/移动框宽度

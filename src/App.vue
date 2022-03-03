@@ -1,28 +1,46 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div>
+      <div class="wrapper-img">
+        <YImage :size="size" :src="bg" />
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import YImage from "./components/zoom.vue";
+import BG from "./assets/bg.jpg";
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    YImage,
+  },
+  data() {
+    return {
+      bg: BG,
+      size: {
+        width: 130,
+        height: 130,
+      },
+    };
+  },
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style lang='less'>
+.wrapper-img {
+  width: 400px !important;
+  height: 400px !important;
+
+  border: 1px solid #ececec;
+  border-radius: 4px;
+  img {
+    object-fit: contain;
+  }
+}
+* {
+  padding: 0;
+  margin: 0;
 }
 </style>
