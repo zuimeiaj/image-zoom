@@ -20,8 +20,8 @@ export default {
     return {
       bg: BG,
       size: {
-        width: 130,
-        height: 130,
+        width: 200,
+        height: 200,
       },
     };
   },

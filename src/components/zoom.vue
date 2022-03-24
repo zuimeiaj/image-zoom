@@ -5,7 +5,11 @@ export default {
     src: String,
     size: {
       type: Object,
-      default: () => ({ width: 150, height: 150 }),
+      default: () => ({ width: 200, height: 200 }),
+    },
+    getBigImage: {
+      type: Function,
+      default: (url) => url,
     },
   },
   data() {
@@ -22,6 +26,7 @@ export default {
         height: 0,
       },
       zoom: 1,
+      bigImgUrl: "",
     };
   },
   methods: {
@@ -47,7 +52,8 @@ export default {
     },
     handleEnter() {
       this.isEnter = true;
-      console.log("enter");
+      // 返回大图片地址
+      this.bigImgUrl = this.getBigImage(this.src);
     },
     handleLeave() {
       this.isEnter = false;
@@ -60,6 +66,7 @@ export default {
     this.zoomy = rect.height / this.size.height;
   },
   render() {
+    console.log(this.zoomx, this.zoomy);
     return (
       <div
         ref="container"
@@ -83,7 +90,7 @@ export default {
                 top:${this.position.top}px;
                 position: absolute;
                 background: rgba(255, 255, 255, 0.5);
-                cursor: none;
+                cursor: move;
             `}
             class="moveable-box"
           ></div>
@@ -109,7 +116,7 @@ export default {
                 left:-${this.position.left * this.zoomx}px;
                 top:-${this.position.top * this.zoomy}px; 
           `}
-              src={this.src}
+              src={this.bigImgUrl}
             />
           </div>
         )}
