@@ -6,7 +6,7 @@
     "README.md"
   ],
   "main": "dist/yooImageZoom.umd.min.js",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --dest image-zoom",

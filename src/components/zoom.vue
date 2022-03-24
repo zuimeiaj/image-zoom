@@ -27,9 +27,10 @@ export default {
   methods: {
     handleMove(e) {
       let areaPos = {
-        x: e.clientX - this.rect.left,
-        y: e.clientY - this.rect.top,
+        x: e.pageX - this.rect.left,
+        y: e.pageY - this.rect.top,
       };
+
       let x = areaPos.x - this.size.width / 2;
       let y = areaPos.y - this.size.height / 2;
 
@@ -46,6 +47,7 @@ export default {
     },
     handleEnter() {
       this.isEnter = true;
+      console.log("enter");
     },
     handleLeave() {
       this.isEnter = false;
