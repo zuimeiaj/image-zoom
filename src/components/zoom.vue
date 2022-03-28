@@ -51,6 +51,10 @@ export default {
       };
     },
     handleEnter() {
+      let rect = this.$refs.container.getBoundingClientRect();
+      this.rect = rect;
+      this.zoomx = rect.width / this.size.width;
+      this.zoomy = rect.height / this.size.height;
       this.isEnter = true;
       // 返回大图片地址
       this.bigImgUrl = this.getBigImage(this.src);
@@ -58,12 +62,6 @@ export default {
     handleLeave() {
       this.isEnter = false;
     },
-  },
-  mounted() {
-    let rect = this.$refs.container.getBoundingClientRect();
-    this.rect = rect;
-    this.zoomx = rect.width / this.size.width;
-    this.zoomy = rect.height / this.size.height;
   },
   render() {
     console.log(this.zoomx, this.zoomy);
